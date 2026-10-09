@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فتح الفيديو في التطبيق</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.7);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 مشاهدة الفيديو</h1>
+        <p>اضغط على الزر لفتح الفيديو في التطبيق</p>
+
+        <button class="btn" id="openApp">فتح الفيديو</button>
+
+        <p class="note">سيتم فتح التطبيق مباشرة على الفيديو</p>
+    </div>
+
+    <script>
+        // رابط الـ Intent لفتح الفيديو في التطبيق
+        var intentUrl = "intent://app.vdocipher.com/20160313versUSE3231P3vdqvWHdICrJAhWPsL5Iepr3o5GPA5gdlbyAUGqKYrdQ#Intent;package=com.vdocipher.zenplayer;scheme=vdocipher;S.market_referrer=bassthalk.com%2CeyJ2aWRlb0lkIjoiMjk0YzNkMGZkMDg5NGI5ZmFiZWNiNzYyMjRhNzJiMzAifQ%3D%3D%2C20160313versUSE3231P3vdqvWHdICrJAhWPsL5Iepr3o5GPA5gdlbyAUGqKYrdQ;end";
+
+        document.getElementById("openApp").addEventListener("click", function() {
+            // محاولة فتح التطبيق مباشرة
+            window.location.href = intentUrl;
+        });
+    </script>
+</body>
+</html>
